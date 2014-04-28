@@ -21,12 +21,23 @@ return array(
         )
     ),
     'controllers' => array(
+     
+        'factories' => array(
+            'Helloworld\Controller\Index' => function($serviceLokator)
+            {
+    
+                $ctr = new Helloworld\Controller\IndexController();
+                
+                $ctr = setGreetingService(
+                    $serviceLokator->getServiceLokator()->getGreetingService()
+                );
+                
+                return $ctr;
+            }
+        ),
         'invokables' => array(
             'Helloworld\Controller\Index' => 'Helloworld\Controller\IndexController'
-        ),
-        'factories' => array(
-            'Helloworld\Controller\IndexControllerFactory'
-        ),
+        )
     ),
     'service_manager' => array(
         'invokables' => array(
