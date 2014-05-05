@@ -23,7 +23,8 @@ return array(
     'controllers' => array(
      
         'factories' => array(
-            'Helloworld\Controller\Index' => function($serviceLokator)
+            'Helloworld\Controller\Index' 
+                => function($serviceLokator)
             {
     
                 $ctr = new Helloworld\Controller\IndexController();
@@ -36,12 +37,14 @@ return array(
             }
         ),
         'invokables' => array(
-            'Helloworld\Controller\Index' => 'Helloworld\Controller\IndexController'
+            'Helloworld\Controller\Index' 
+                => 'Helloworld\Controller\IndexController'
         )
     ),
     'service_manager' => array(
         'invokables' => array(
-            'greetingService' => 'Helloworld\Service\GreetingService'
+            'greetingService' 
+                => 'Helloworld\Service\GreetingService'
         )
     )
 );
