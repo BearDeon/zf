@@ -23,4 +23,13 @@ class Module {
             )
         );
     }
+    
+    public function getServiceConfig(){
+        
+        return array(
+            'invokables' => array(
+                'loggingService' => 'Helloworld\Service\LoggingService'
+            )
+        );
+    }
 }
