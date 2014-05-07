@@ -1,10 +1,15 @@
 <?php
 
 namespace Helloworld\Service;
+use Zend\EventManager\EventManagerInterface;
 
 class GreetingService {
     
+    private $eventManager;
+    
     public function getGreeting(){
+        
+        $this->eventMager->trigger('getGreeting');
         
         if(date("H") <= 11){
             return "Доброе утро, мир!";
@@ -13,5 +18,13 @@ class GreetingService {
         }else{
             return "Добрый вечер, мир!"; 
         }
+    }
+    
+    public function getEventManager(){
+        return $this->eventManager();
+    }
+    
+    public function setEventManager(EventManagerInterface $em){
+        $this->eventManager = $em;
     }
 }
