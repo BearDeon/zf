@@ -28,7 +28,7 @@ class Module {
         
         return array(
             'factories' => array(
-                'greetingService' => 'Helloworld\Service\GreetingServiceFactory'
+                //'greetingService' => 'Helloworld\Service\GreetingServiceFactory'
             ),
             'invokables' => array(
                 'loggingService' => 'Helloworld\Service\LoggingService'

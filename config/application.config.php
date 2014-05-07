@@ -5,6 +5,7 @@ return array(
         'Application',
         'Album',
         'Helloworld',
+        'HelloworldMod',
     ),
     
 

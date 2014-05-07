@@ -9,7 +9,7 @@ class GreetingService {
     
     public function getGreeting(){
         
-        $this->eventMager->trigger('getGreeting');
+        //$this->eventMager->trigger('getGreeting');
         
         if(date("H") <= 11){
             return "Доброе утро, мир!";
