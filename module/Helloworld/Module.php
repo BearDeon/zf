@@ -35,4 +35,22 @@ class Module {
             )
         );
     }
+    
+    public function getControllerPluginConfig(){
+        
+        return array(
+            'invokables' => array(
+                'currentDate' => 'Helloworld\Controller\Plugin\CurrentDate'
+            )
+        );
+    }
+    
+    public function getViewHelperConfig(){
+        
+        return array(
+            'invokables' => array(
+                'displayCurrentDate' => 'Helloworld\View\Helper\DisplayCurrentDate'
+            )
+        );
+    }
 }
