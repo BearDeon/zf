@@ -17,6 +17,16 @@ return array(
                         'action' => 'index'
                     )
                 )
+            ),
+            'signup' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/signup',
+                    'defaults' => array(
+                        'controller' => 'Helloworld\Controller\Index',
+                        'action' => 'signup'
+                    )
+                )
             )
         )
     ),

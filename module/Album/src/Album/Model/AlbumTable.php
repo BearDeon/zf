@@ -37,6 +37,7 @@ class AlbumTable
         );
  
         $id = (int)$album->id;
+        
         if ($id == 0) {
             $this->tableGateway->insert($data);
         } else {

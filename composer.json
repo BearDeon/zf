@@ -10,6 +10,16 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.3.*",
-        "zf-commons/zfc-twig": "dev-master"
+        "zendframework/zftool": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master",
+        "zf-commons/zfc-twig": "dev-master",
+        "zf-commons/zfc-base": "v0.1.2",
+        "zf-commons/zfc-user": "dev-master",
+        "bjyoungblood/bjy-authorize": "1.4.*",
+        "doctrine/common": ">=2.1",
+        "doctrine/doctrine-orm-module": "0.7.*"
+        
+        
+
     }
 }

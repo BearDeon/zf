@@ -11,7 +11,8 @@ class IndexController extends AbstractActionController
     
     public function indexAction() 
     { 
-        $greetingSrv = $this->getServiceLocator()->get('greetingService');
+     
+         $greetingSrv = $this->getServiceLocator()->get('greetingService');
         
         $url = $this->url()->fromRoute('sayhello');
         
@@ -37,11 +38,39 @@ class IndexController extends AbstractActionController
                 'url' => $url,
                 'date' => $this->currentDate()
             )
-        );
-        
-        
+        );         
+          
     }
     
+    public function signupAction(){
+        
+        $form = new \Helloworld\Form\SignUp();
+        $form->setHydrator(new \Zend\Stdlib\Hydrator\Reflection());
+        $form->bind(new \Helloworld\Entity\User());
+        
+        if($this->getRequest()->isPost()){
+            
+            $form->setData($this->getRequest()->getPost());
+            
+            if($form->isValid()){
+                var_dump($form->getData()); 
+            }else{
+                return new ViewModel(
+                    array(
+                        'form' => $form
+                    )
+                );
+            }
+        }else{
+            return new ViewModel(
+                array(
+                    'form' => $form
+                )
+            );
+        }   
+    }
+
+
     public function setGreetingService($service)
     {
         $this->greetingService = $service;

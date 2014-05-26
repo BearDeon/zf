@@ -15,7 +15,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Album\Controller\Album',#Application\Controller\Index
+                        'controller' => 'Application\Controller\Index',#Album\Controller\Album
                         'action'     => 'index',
                     ),
                 ),

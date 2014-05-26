@@ -11,7 +11,12 @@ class SignUp extends Form{
         parent::__construct('SignUp');
         $this->setAttribute('action', '/signup');
         $this->setAttribute('method', 'post');
+        $this->setInputFilter(new \Helloworld\Form\SignUpFilter());
+        /*
+            $this->add(new \Helloworld\Form\UserFieldSet());
+        */
         
+        /*
         $this->add(
             array(
                 'name' => 'name',
@@ -24,7 +29,7 @@ class SignUp extends Form{
                 )
             )
         );
-        
+
         $this->add(
             array(
                 'name' => 'email',
@@ -37,15 +42,25 @@ class SignUp extends Form{
                 )
             )
         );
+        */
         
         $this->add(
-                array(
-                    'name' => 'submit',
-                    'attributes' => array(
-                        'type' => 'submit',
-                        'value' => 'Register now'
-                    )
+            array(
+                'type' => 'Helloworld\Form\UserFieldset',
+                'options' => array(
+                    'use_as_base_fieldset' => true
                 )
+            )
+        );
+        
+        $this->add(
+            array(
+                'name' => 'submit',
+                'attributes' => array(
+                    'type' => 'submit',
+                    'value' => 'Register now'
+                )
+            )
         );
     }
 }
